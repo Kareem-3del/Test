@@ -1,0 +1,112 @@
+.read-info {
+  padding: 0 1rem;
+  margin: 0 auto;
+  width: 100%;
+}
+.read-info .top-info {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  display: flex;
+}
+.read-info__warp {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.read-info__warp__container {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  height: 200px;
+  direction: rtl;
+  flex-direction: column;
+  justify-content: center;
+}
+.read-info__warp__container h1 {
+  height: 100%;
+  font-size: 3rem;
+}
+.read-info__warp__container__img {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  object-fit: cover;
+  height: 100%;
+  object-position: center center;
+  z-index: -1;
+  filter: brightness(0.5);
+  top: -100px;
+}
+.read-info__warp__status {
+  direction: rtl;
+  height: 100px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  padding: 0 1rem;
+  flex-direction: column;
+}
+.read-info__warp__status__top {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+.read-info__warp__status__top .start-read {
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.read-info__warp__status__top .start-read * {
+  transition: all 0.3s ease;
+  margin: 0.2rem;
+}
+.read-info__warp__status__top .start-read:hover * {
+  color: #e91e63;
+}
+.read-info__warp__status__bottom a {
+  margin: 0 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.read-info__warp__status__bottom a:hover {
+  color: #e91e63;
+}
+.read-info__img {
+  height: 100%;
+  width: 260px;
+  background: #e91e63;
+}
+.read-info__img img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  object-position: center center;
+}
+.read-info__story {
+  direction: rtl;
+  max-width: 800px;
+  margin-left: auto;
+}
+.read-info__chapters {
+  direction: rtl;
+}
+
+.icon {
+  transition: all 0.3s ease;
+  margin: 0 1rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #bbbbbb;
+}
+.icon:hover {
+  color: #e91e63;
+}
+
+#bookmark {
+  color: #FFF;
+}
+
+/*# sourceMappingURL=manga-page.css.map */

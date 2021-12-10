@@ -1,0 +1,159 @@
+@use '../scss' as scss;
+
+//header
+
+
+
+.manga-main {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  height: calc(100vh - 4rem);
+
+  .manga-img {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    left: 0;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: linear-gradient(to left, scss.$body-bg, transparent);
+      @include scss.tablet{
+        background: linear-gradient(to left, scss.$body-bg, transparent),
+        linear-gradient(to bottom, scss.$body-bg, transparent 15%),
+        linear-gradient(to right, scss.$body-bg, transparent 20%),
+        linear-gradient(to top, scss.$body-bg, transparent 20%);
+      }
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @include scss.tablet {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      max-width: 100%;
+      z-index: -1;
+    }
+
+  }
+
+  .manga-info {
+    width: 100%;
+    direction: rtl;
+    max-width: 950px;
+    padding: 1rem;
+    z-index: 1;
+
+    &__story {
+      display: flex;
+      align-items: center;
+
+      @include scss.mobile {
+        flex-direction: column;
+      }
+
+      h2 {
+        margin: 1rem;
+      }
+
+    }
+
+    &__headline {
+      font-size: 4rem;
+      text-transform: uppercase;
+      text-align: -webkit-right;
+      width: 80%;
+      @include scss.mobile {
+        width: auto;
+      }
+    }
+
+
+    @include scss.pc {
+      width: 100%;
+    }
+  }
+
+  .slider{
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 200px;
+    overflow: hidden;
+    align-items: center;
+    h2{
+      padding: 1rem;
+    }
+    &__slider{
+      height: 100%;
+    }
+    .slider__warp {
+      position: absolute;
+      width: 100%;
+      overflow: hidden;
+      .slide-warp{
+
+        img{
+          transition: all 0.3s ease-out;
+          border-radius: 10px;
+          filter: grayscale(1);
+          width: 100%;
+          height: 200px;
+          &:hover{
+            filter: none;
+          }
+        }
+
+      }
+
+
+
+      &:after {
+        background: linear-gradient(to right, scss.$body-bg 56%, transparent);
+        content: "";
+        position: absolute;
+        width: 90px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        box-shadow: 10px 0 8px 4px scss.$body-bg;
+        z-index: 1;
+      }
+    }
+    @include scss.mobile{
+      display: block;
+      overflow : unset;
+    }
+    .active{
+      img{
+        filter: none!important;
+      }
+    }
+  }
+
+}
+
+
+.manga-status {
+  margin-bottom: 1rem;
+  font-weight: 500;
+
+  * {
+    margin: 0 0.3rem;
+  }
+}
+
+
+

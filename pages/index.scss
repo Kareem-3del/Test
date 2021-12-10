@@ -1,0 +1,167 @@
+@use '../scss' as scss;
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700&family=Montserrat:ital,wght@0,200;0,400;0,600;0,700;1,500&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+*:focus{
+  outline: none;
+}
+html{
+  font-size: 90%;
+  font-weight: 300;
+
+  @include scss.mobile{
+    font-size: 85%;
+  }
+}
+body{
+  font-size: 1rem;
+  background: scss.$body-bg;
+  color: scss.$text-color;
+  font-family: scss.$font-family;
+}
+
+ul{
+  list-style: none;
+}
+button{
+  background: transparent;
+  padding: 0.3rem;
+  border: 2px solid scss.$main-color;
+}
+a {
+  color: scss.$text-color;
+  text-decoration: none;
+}
+.primary-color{
+  color: scss.$main-color;
+
+}
+img {
+  width: 100%;
+}
+.flex{
+  display: flex;
+  &__center{
+    display: flex;
+    justify-content:center;
+    &__center{
+      display: flex;
+      justify-content:center;
+      align-items: center;
+    }
+  }
+}
+.container {
+  max-width: 1660px;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+
+//header
+header {
+  position: relative;
+  z-index: 99;
+  background: #0000007a;
+}
+
+//Menu
+.menu {
+  z-index: 99;
+  height: 4rem;
+  padding: 0 1rem;
+  @include scss.flex(center, unset);
+
+  &__links {
+    margin: auto;
+    @include scss.flex(center, unset);
+
+    li {
+      margin: 0 0.6rem;
+    }
+  }
+
+  &__logo {
+
+    font-size: 1.9rem;
+    display: flex;
+    align-items: center;
+    *{
+      margin: 0.2rem;
+      transition: all 300ms ease;
+
+    }
+    img{
+      width: 5rem;
+      @include scss.mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__profile {
+    &__photo {
+      img {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+//Footer
+footer {
+  transition: all 0.4s ease;
+  top: 0;
+  position: relative;
+  z-index: 90;
+  min-width: 250px;
+  background: #0000007a;
+  height: calc(100vh - 4rem);
+  @include scss.tablet{
+    position: fixed;
+    height : 100vh;
+  }
+
+  .footer {
+    transition: all 0.4s ease;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    padding: 1rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}
+//buttons
+.btn {
+
+  transition: 300ms ease all;
+  padding: 0.8rem;
+  background: #232323;
+  min-width: 100px;
+  display: flex;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  &:hover{
+    background: scss.$main-color;
+  }
+  &-main{
+    background: scss.$main-color!important;
+    &:hover{
+      background: #232323!important;
+    }
+  }
+}
+
